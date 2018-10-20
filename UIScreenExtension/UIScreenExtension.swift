@@ -75,7 +75,10 @@ public extension UIScreen {
             return 458
             
         default:                                                     // unknown model identifier
-            return .none
+            let ppi = UIScreen.main.nativeScale * ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) ? 132 : 163)
+            print("PPI: ", ppi)
+            return ppi
+            //return .none
         }
     }()
     
